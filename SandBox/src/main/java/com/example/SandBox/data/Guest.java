@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Guest {
     @Id
     @Column(name = "GUEST_ID")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //Needs to be set to IDENTITY to work with H2 DBs (OracleDB is SEQUENCE)
     private long guestId;
 
     @Column(name = "FIRST_NAME")
